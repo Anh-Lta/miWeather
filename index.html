@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>miWeather</title>
+    <!--------------- Remix icon --------------->
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="value1 section">
+        <div class="about">
+          <div class="about__date">
+            <ul>
+              <li class="about__date--month">June 2022</li>
+              <li class="about__date--day">Wednesday, Jun 22, 2022</li>
+            </ul>
+          </div>
+
+          <div class="about__search">
+            <div class="search__input">
+              <input
+                class="search__input--input"
+                (keydown)="checkAddress($event.target.value)"
+                type="text"
+                placeholder="Search location here"
+              />
+              <i class="ri-search-line search__input--icon"></i>
+            </div>
+            <div class="search__user">
+              <i class="ri-user-location-line search__user--icon"></i>
+            </div>
+          </div>
+        </div>
+
+        <div class="features">
+          <div class="features__tittle">
+            <p class="features__tittle--h1">Today overview</p>
+          </div>
+          <div class="features__numbers">
+            <div class="features__count">
+              <i class="ri-windy-line features__count--icon"></i>
+              <div class="features__count--value">
+                <ul>
+                  <li class="features__count--text">Wind Speed</li>
+                  <li class="features__count--number">
+                    <span class="number--wind">8</span>km/h
+                  </li>
+                </ul>
+              </div>
+              <div class="features__count--status">
+                <p class="features__count--status--text">Normal</p>
+              </div>
+            </div>
+            <div class="features__count">
+              <i class="ri-sun-line features__count--icon"></i>
+              <div class="features__count--value">
+                <ul>
+                  <li class="features__count--text">UV index</li>
+                  <li class="features__count--number">
+                    <span class="number--uv">9</span>
+                  </li>
+                </ul>
+              </div>
+              <div class="features__count--status">
+                <p class="features__count--status--text statusUV">High</p>
+              </div>
+            </div>
+            <div class="features__count">
+              <i class="ri-contrast-drop-2-line features__count--icon"></i>
+              <div class="features__count--value">
+                <ul>
+                  <li class="features__count--text">Humidity</li>
+                  <li class="features__count--number">
+                    <span class="number--humidity">24</span>%
+                  </li>
+                </ul>
+              </div>
+              <div class="features__count--status">
+                <p class="features__count--status--text statusHumi"></p>
+              </div>
+            </div>
+            <div class="features__count">
+              <i class="ri-eye-2-line features__count--icon"></i>
+              <div class="features__count--value">
+                <ul>
+                  <li class="features__count--text">Visibility</li>
+                  <li class="features__count--number">
+                    <span class="number--Visibility">10</span>km
+                  </li>
+                </ul>
+              </div>
+              <div class="features__count--status">
+                <p class="features__count--status--text">Normal</p>
+              </div>
+            </div>
+          </div>
+          <div class="features__air">
+            <div class="features__Aircount">
+              <p class="features__Aircount--air">[ PM 2.5 ]</p>
+              <p class="features__Aircount--airValue PM25">157.59</p>
+            </div>
+            <div class="features__Aircount">
+              <p class="features__Aircount--air">[ O3 ]</p>
+              <p class="features__Aircount--airValue O3">157.59</p>
+            </div>
+            <div class="features__Aircount">
+              <p class="features__Aircount--air">[ PM 10 ]</p>
+              <p class="features__Aircount--airValue PM10">157.59</p>
+            </div>
+            <div class="features__Aircount">
+              <p class="features__Aircount--air">[ NO2 ]</p>
+              <p class="features__Aircount--airValue NO2">157.59</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="next7hours">
+          <p class="next7hours__tittle">
+            How’s the <br />
+            temperature today? <br />
+          </p>
+
+          <div class="hourValue">
+            <div class="hourValue__feature">
+              <img
+                src="./img/sunrise-light.png"
+                alt=""
+                class="hourValue__feature--icon"
+              />
+              <p class="hourValue__feature--value">
+                <span class="hourValue__feature--value--number"></span>°
+              </p>
+              <p class="hourValue__feature--text">Now</p>
+            </div>
+            <div class="hourValue__feature">
+              <img
+                src="./img/sunrise-light.png"
+                alt=""
+                class="hourValue__feature--icon"
+              />
+              <p class="hourValue__feature--value">
+                <span class="hourValue__feature--value--number"></span>°
+              </p>
+              <p class="hourValue__feature--text">17</p>
+            </div>
+            <div class="hourValue__feature">
+              <img
+                src="./img/sunrise-light.png"
+                alt=""
+                class="hourValue__feature--icon"
+              />
+              <p class="hourValue__feature--value">
+                <span class="hourValue__feature--value--number"></span>°
+              </p>
+              <p class="hourValue__feature--text">18</p>
+            </div>
+            <div class="hourValue__feature">
+              <img
+                src="./img/sunrise-light.png"
+                alt=""
+                class="hourValue__feature--icon"
+              />
+              <p class="hourValue__feature--value">
+                <span class="hourValue__feature--value--number"></span>°
+              </p>
+              <p class="hourValue__feature--text">19</p>
+            </div>
+            <div class="hourValue__feature">
+              <img
+                src="./img/sunrise-light.png"
+                alt=""
+                class="hourValue__feature--icon"
+              />
+              <p class="hourValue__feature--value">
+                <span class="hourValue__feature--value--number"></span>°
+              </p>
+              <p class="hourValue__feature--text">20</p>
+            </div>
+            <div class="hourValue__feature">
+              <img
+                src="./img/sunrise-light.png"
+                alt=""
+                class="hourValue__feature--icon"
+              />
+              <p class="hourValue__feature--value">
+                <span class="hourValue__feature--value--number"></span>°
+              </p>
+              <p class="hourValue__feature--text">21</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="value2 section">
+        <div class="inFortoday">
+          <div class="inFortoday__location">
+            <ul>
+              <li class="inFortoday__location--value1">Ha Noi</li>
+              <li class="inFortoday__location--value2">Have a good day</li>
+            </ul>
+          </div>
+          <div class="inFortoday__hour">
+            <span class="inFortoday__hour--value">15:50</span>
+          </div>
+        </div>
+
+        <div class="inForstatus">
+          <img src="./img/sunrise-light.png" alt="" class="inForstatus__icon" />
+          <div class="inForstatus__value">
+            <p class="inForstatus__value--number">
+              <span class="inForstatus__value--Celcius">32</span>°C
+            </p>
+            <ul>
+              <li class="inForstatus__value--text inFor__description"></li>
+              <li class="inForstatus__value--text inFor__main"></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="inForDays">
+          <p class="inForDays__tittle">Next 7 days</p>
+          <div class="inForDays__days">
+            <p class="inForDays__days--day">Friday</p>
+            <img
+              src="./img/sunrise-light.png"
+              alt=""
+              class="inForDays__days--icon"
+            />
+            <div>
+              <ul class="inForDays__days--temp">
+                <li class="inForDays__day--temp--min">28</li>
+                <li class="inForDays__day--temp--max">32</li>
+              </ul>
+            </div>
+          </div>
+          <div class="inForDays__days">
+            <p class="inForDays__days--day">Friday</p>
+            <img
+              src="./img/sunrise-light.png"
+              alt=""
+              class="inForDays__days--icon"
+            />
+            <div>
+              <ul class="inForDays__days--temp">
+                <li class="inForDays__day--temp--min">28</li>
+                <li class="inForDays__day--temp--max">32</li>
+              </ul>
+            </div>
+          </div>
+          <div class="inForDays__days">
+            <p class="inForDays__days--day">Friday</p>
+            <img
+              src="./img/sunrise-light.png"
+              alt=""
+              class="inForDays__days--icon"
+            />
+            <div>
+              <ul class="inForDays__days--temp">
+                <li class="inForDays__day--temp--min">28</li>
+                <li class="inForDays__day--temp--max">32</li>
+              </ul>
+            </div>
+          </div>
+          <div class="inForDays__days">
+            <p class="inForDays__days--day">Friday</p>
+            <img
+              src="./img/sunrise-light.png"
+              alt=""
+              class="inForDays__days--icon"
+            />
+            <div>
+              <ul class="inForDays__days--temp">
+                <li class="inForDays__day--temp--min">28</li>
+                <li class="inForDays__day--temp--max">32</li>
+              </ul>
+            </div>
+          </div>
+          <div class="inForDays__days">
+            <p class="inForDays__days--day">Friday</p>
+            <img
+              src="./img/sunrise-light.png"
+              alt=""
+              class="inForDays__days--icon"
+            />
+            <div>
+              <ul class="inForDays__days--temp">
+                <li class="inForDays__day--temp--min">28</li>
+                <li class="inForDays__day--temp--max">32</li>
+              </ul>
+            </div>
+          </div>
+          <div class="inForDays__days">
+            <p class="inForDays__days--day">Friday</p>
+            <img
+              src="./img/sunrise-light.png"
+              alt=""
+              class="inForDays__days--icon"
+            />
+            <div>
+              <ul class="inForDays__days--temp">
+                <li class="inForDays__day--temp--min">28</li>
+                <li class="inForDays__day--temp--max">-32</li>
+              </ul>
+            </div>
+          </div>
+          <div class="inForDays__days">
+            <p class="inForDays__days--day">Friday</p>
+            <img
+              src="./img/sunrise-light.png"
+              alt=""
+              class="inForDays__days--icon"
+            />
+            <div>
+              <ul class="inForDays__days--temp">
+                <li class="inForDays__day--temp--min">-28</li>
+                <li class="inForDays__day--temp--max">32</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="inForTimeSun">
+          <p class="inForTimeSun__tittle">Sunrise & Sunset</p>
+          <div class="inForTimeSun__rs">
+            <i class="ri-sun-fill inForTimeSun__rs--icon"></i>
+            <div class="inForTimeSun__text">              
+                <span class="inForTimeSun__text--number sunrise">4.25</span> AM             
+            </div>
+              <p class="inForTimeSun__minusH">Sunrise</p>
+          </div>
+          <div class="inForTimeSun__rs">
+            <i class="ri-sun-foggy-fill inForTimeSun__rs--icon"></i>
+            <div class="inForTimeSun__text">             
+                <span class="inForTimeSun__text--number sunset">6.20</span> PM             
+            </div>
+            <p class="inForTimeSun__minusH">Sunset</p>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="./main.js"></script>
+  </body>
+</html>
