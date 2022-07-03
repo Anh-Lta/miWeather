@@ -77,7 +77,7 @@ const O3 = document.querySelector(".O3");
 const PM10 = document.querySelector(".PM10");
 const NO2 = document.querySelector(".NO2");
 function getDetailPolution(latApi, lonApi) {
-  urlPolution = `http://api.openweathermap.org/data/2.5/air_pollution?lat=${latApi}&lon=${lonApi}&appid=${API_ID}`;
+  urlPolution = `https://api.openweathermap.org/data/2.5/air_pollution?lat=${latApi}&lon=${lonApi}&appid=${API_ID}`;
   fetch(urlPolution)
     .then((res) => res.json())
     .then((dataPolution) => {
@@ -139,7 +139,7 @@ function getDetailMain(latApi, lonApi) {
 }
 
 function getDetailHourDay(latApi, lonApi) {
-  urlPredict = `http://api.openweathermap.org/data/2.5/onecall?lat=${latApi}&lon=${lonApi}&appid=${API_ID}&exclude=minutely&units=metric`;
+  urlPredict = `https://api.openweathermap.org/data/2.5/onecall?lat=${latApi}&lon=${lonApi}&appid=${API_ID}&exclude=minutely&units=metric`;
   fetch(urlPredict)
     .then((res) => res.json())
     .then((dataPredict) => {
@@ -218,13 +218,13 @@ function getDetailHourDay(latApi, lonApi) {
       for (i = 0; i < 7; i++) {
         icon7D[i].setAttribute(
           "src",
-          `http://openweathermap.org/img/wn/${dataPredict.daily[i].weather[0].icon}@2x.png`
+          `https://openweathermap.org/img/wn/${dataPredict.daily[i].weather[0].icon}@2x.png`
         );
       }
       for (j = 0; j < 6; j++) {
         icon6H[j].setAttribute(
           "src",
-          `http://openweathermap.org/img/wn/${dataPredict.hourly[j].weather[0].icon}@2x.png`
+          `https://openweathermap.org/img/wn/${dataPredict.hourly[j].weather[0].icon}@2x.png`
         );
       }
     });
