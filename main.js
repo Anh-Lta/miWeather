@@ -139,7 +139,7 @@ function getDetailMain(latApi, lonApi) {
 }
 
 function getDetailHourDay(latApi, lonApi) {
-  urlPredict = `https://api.openweathermap.org/data/2.5/onecall?lat=${latApi}&lon=${lonApi}&appid=${API_ID}&exclude=minutely&units=metric`;
+  urlPredict = `http://api.openweathermap.org/data/2.5/onecall?lat=${latApi}&lon=${lonApi}&appid=${API_ID}&exclude=minutely&units=metric`;
   fetch(urlPredict)
     .then((res) => res.json())
     .then((dataPredict) => {
